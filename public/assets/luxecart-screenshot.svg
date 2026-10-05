@@ -1,179 +1,170 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="100%" height="100%">
-  <defs>
-    <!-- Background Gradients -->
-    <linearGradient id="luxeBg" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#0a0d14" />
-      <stop offset="100%" stop-color="#06080d" />
-    </linearGradient>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="100%" height="100%" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <!-- Background -->
+  <rect width="1200" height="680" fill="#fcfbf9" />
 
-    <!-- Card Background -->
-    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#111827" />
-      <stop offset="100%" stop-color="#0b0f19" />
-    </linearGradient>
+  <!-- Top Navigation Bar -->
+  <g id="navbar">
+    <!-- LuxeCart Brand Logo -->
+    <text x="40" y="44" font-family="'Times New Roman', Times, Georgia, serif" font-size="26" font-weight="700" letter-spacing="1.5" fill="#111827">LuxeCart</text>
 
-    <!-- Gold / Bronze Luxury Gradient -->
-    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f59e0b" />
-      <stop offset="50%" stop-color="#d97706" />
-      <stop offset="100%" stop-color="#b45309" />
-    </linearGradient>
+    <!-- Navigation Links -->
+    <g font-size="14" font-weight="500" fill="#4b5563">
+      <text x="260" y="42">Home</text>
+      <text x="330" y="42" font-weight="700" fill="#111827">Shop All</text>
+      <!-- Active Underline -->
+      <line x1="330" y1="49" x2="385" y2="49" stroke="#111827" stroke-width="2" />
+      <text x="415" y="42">Women</text>
+      <text x="495" y="42">Men</text>
+      <text x="555" y="42">Accessories</text>
+      <text x="665" y="42">Jewelry</text>
+      <text x="745" y="42">Living</text>
+    </g>
 
-    <!-- Cyan Ambient Accent -->
-    <linearGradient id="cyanAccent" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#06b6d4" />
-      <stop offset="100%" stop-color="#3b82f6" />
-    </linearGradient>
-  </defs>
+    <!-- Search Input Box -->
+    <rect x="890" y="22" width="150" height="34" rx="6" fill="#f3f4f6" stroke="#e5e7eb" stroke-width="1" />
+    <circle cx="906" cy="39" r="5" stroke="#9ca3af" stroke-width="1.5" fill="none" />
+    <line x1="910" y1="43" x2="915" y2="48" stroke="#9ca3af" stroke-width="1.5" />
+    <text x="924" y="44" font-size="12" fill="#9ca3af">Search catalog</text>
+    <rect x="1012" y="27" width="22" height="24" rx="4" fill="#e5e7eb" />
+    <text x="1016" y="43" font-size="10" font-weight="600" fill="#6b7280">⌘K</text>
 
-  <!-- Window Frame -->
-  <rect x="0" y="0" width="1200" height="750" rx="14" fill="url(#luxeBg)" />
-  
-  <!-- Browser Chrome Top Bar -->
-  <rect x="0" y="0" width="1200" height="52" fill="#0c111c" />
-  <line x1="0" y1="52" x2="1200" y2="52" stroke="#1f293d" stroke-width="1.5" />
+    <!-- Nav Icons: Box, Wishlist, Cart -->
+    <!-- Box Icon -->
+    <path d="M1065 30 L1075 25 L1085 30 L1075 35 Z M1065 32 L1065 44 L1075 49 L1075 36 Z M1085 32 L1085 44 L1075 49 L1075 36 Z" fill="none" stroke="#1f2937" stroke-width="1.5" stroke-linejoin="round" />
+    
+    <!-- Heart Icon with (2) badge -->
+    <path d="M1115 32 C1112 28 1106 28 1103 33 C1100 28 1094 28 1091 33 C1087 40 1097 47 1103 52 C1109 47 1119 40 1115 32 Z" fill="none" stroke="#1f2937" stroke-width="1.5" />
+    <circle cx="1116" cy="28" r="8" fill="#1f2937" />
+    <text x="1113" y="32" font-size="10" font-weight="700" fill="#ffffff">2</text>
 
-  <!-- Window Controls -->
-  <circle cx="28" cy="26" r="6" fill="#ef4444" opacity="0.85" />
-  <circle cx="48" cy="26" r="6" fill="#f59e0b" opacity="0.85" />
-  <circle cx="68" cy="26" r="6" fill="#10b981" opacity="0.85" />
-
-  <!-- URL Address Bar -->
-  <rect x="220" y="12" width="760" height="28" rx="6" fill="#161f30" stroke="#25334c" stroke-width="1" />
-  <circle cx="238" cy="26" r="4" fill="#06b6d4" />
-  <text x="252" y="30" font-family="'JetBrains Mono', monospace" font-size="12" fill="#94a3b8">https://luxecart-minimalist-luxury-e-commerce.ai.studio</text>
-  <rect x="940" y="18" width="30" height="16" rx="4" fill="#06b6d4" opacity="0.2" />
-  <text x="944" y="30" font-family="sans-serif" font-size="10" fill="#38bdf8" font-weight="bold">SSL</text>
-
-  <!-- Website Top Navbar -->
-  <rect x="0" y="52" width="1200" height="70" fill="#080c14" opacity="0.95" />
-  <line x1="0" y1="122" x2="1200" y2="122" stroke="#1a2333" stroke-width="1" />
-
-  <!-- Brand Logo -->
-  <text x="50" y="96" font-family="'Plus Jakarta Sans', sans-serif" font-size="22" font-weight="800" fill="#ffffff" letter-spacing="3">LUXECART</text>
-  <circle cx="195" cy="92" r="3" fill="#06b6d4" />
-
-  <!-- Nav Items -->
-  <text x="320" y="94" font-family="sans-serif" font-size="13" font-weight="600" fill="#ffffff" letter-spacing="1">TIMEPIECES</text>
-  <text x="440" y="94" font-family="sans-serif" font-size="13" font-weight="500" fill="#94a3b8" letter-spacing="1">LEATHER GOODS</text>
-  <text x="590" y="94" font-family="sans-serif" font-size="13" font-weight="500" fill="#94a3b8" letter-spacing="1">ACCESSORIES</text>
-  <text x="730" y="94" font-family="sans-serif" font-size="13" font-weight="500" fill="#94a3b8" letter-spacing="1">COLLECTIONS</text>
-
-  <!-- Right Actions: Wishlist & Bag Button -->
-  <rect x="1010" y="70" width="140" height="38" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1" />
-  <text x="1030" y="93" font-family="sans-serif" font-size="12" font-weight="bold" fill="#38bdf8">BAG (2)</text>
-  <text x="1086" y="93" font-family="'JetBrains Mono', monospace" font-size="12" fill="#e2e8f0">$500.00</text>
-
-  <!-- Hero Banner Strip -->
-  <rect x="50" y="145" width="1100" height="150" rx="12" fill="#0d131f" stroke="#1f293d" stroke-width="1" />
-  <text x="90" y="195" font-family="sans-serif" font-size="11" font-weight="bold" fill="#06b6d4" letter-spacing="2">SPRING HOROLOGY &amp; LEATHER COLLECTION</text>
-  <text x="90" y="235" font-family="'Plus Jakarta Sans', sans-serif" font-size="28" font-weight="700" fill="#ffffff">Minimalist Luxury. Engineered Precision.</text>
-  <text x="90" y="265" font-family="sans-serif" font-size="13" fill="#94a3b8">Curated timepieces, full-grain Italian leather folios, and refined personal essentials.</text>
-
-  <!-- Filter Pills -->
-  <g transform="translate(50, 315)">
-    <rect x="0" y="0" width="70" height="30" rx="6" fill="#06b6d4" opacity="0.2" stroke="#06b6d4" stroke-width="1" />
-    <text x="18" y="20" font-family="sans-serif" font-size="12" font-weight="600" fill="#38bdf8">All (18)</text>
-
-    <rect x="80" y="0" width="115" height="30" rx="6" fill="#111827" stroke="#1f293d" stroke-width="1" />
-    <text x="95" y="20" font-family="sans-serif" font-size="12" fill="#94a3b8">Watches (8)</text>
-
-    <rect x="205" y="0" width="125" height="30" rx="6" fill="#111827" stroke="#1f293d" stroke-width="1" />
-    <text x="218" y="20" font-family="sans-serif" font-size="12" fill="#94a3b8">Leather Goods (6)</text>
-
-    <rect x="340" y="0" width="110" height="30" rx="6" fill="#111827" stroke="#1f293d" stroke-width="1" />
-    <text x="355" y="20" font-family="sans-serif" font-size="12" fill="#94a3b8">Accessories (4)</text>
+    <!-- Cart Bag Icon with (1) badge -->
+    <rect x="1145" y="30" width="18" height="19" rx="3" fill="none" stroke="#1f2937" stroke-width="1.5" />
+    <path d="M1150 30 V26 C1150 23.5 1152 22 1154 22 C1156 22 1158 23.5 1158 26 V30" fill="none" stroke="#1f2937" stroke-width="1.5" />
+    <circle cx="1165" cy="28" r="8" fill="#1f2937" />
+    <text x="1162" y="32" font-size="10" font-weight="700" fill="#ffffff">1</text>
   </g>
 
-  <!-- Product Grid (3 Luxury Showcase Cards) -->
+  <!-- Divider Line -->
+  <line x1="0" y1="70" x2="1200" y2="70" stroke="#f3f4f6" stroke-width="1" />
 
-  <!-- Card 1: Chronos Noir 40mm Watch -->
-  <g transform="translate(50, 365)">
-    <rect x="0" y="0" width="345" height="340" rx="12" fill="url(#cardGrad)" stroke="#1e293b" stroke-width="1.5" />
+  <!-- Main Hero Section Content -->
+  <g id="hero-content">
     
-    <!-- Image Box -->
-    <rect x="15" y="15" width="315" height="190" rx="8" fill="#070a10" stroke="#182234" stroke-width="1" />
-    
-    <!-- Watch Illustration -->
-    <!-- Watch Strap -->
-    <rect x="157" y="30" width="30" height="160" rx="4" fill="#1a1c23" stroke="#2a2e3d" stroke-width="1" />
-    <!-- Watch Case -->
-    <circle cx="172" cy="110" r="50" fill="#0d1117" stroke="url(#goldGrad)" stroke-width="3" />
-    <circle cx="172" cy="110" r="44" fill="#080b0f" />
-    <!-- Hour Markers -->
-    <line x1="172" y1="72" x2="172" y2="78" stroke="#f59e0b" stroke-width="2" />
-    <line x1="172" y1="142" x2="172" y2="148" stroke="#f59e0b" stroke-width="2" />
-    <line x1="134" y1="110" x2="140" y2="110" stroke="#f59e0b" stroke-width="2" />
-    <line x1="204" y1="110" x2="210" y2="110" stroke="#f59e0b" stroke-width="2" />
-    <!-- Hands -->
-    <line x1="172" y1="110" x2="172" y2="88" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" />
-    <line x1="172" y1="110" x2="190" y2="110" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" />
-    <circle cx="172" cy="110" r="3" fill="#f59e0b" />
+    <!-- Left Column: Editorial Copy & CTAs -->
+    <g transform="translate(40, 150)">
+      <!-- Atelier Tag -->
+      <line x1="0" y1="0" x2="30" y2="0" stroke="#92400e" stroke-width="2" />
+      <text x="40" y="4" font-size="12" font-weight="700" letter-spacing="2.5" fill="#92400e">AUTUMN / WINTER 2026 ATELIER</text>
 
-    <!-- Badges -->
-    <rect x="25" y="25" width="55" height="20" rx="4" fill="#0284c7" opacity="0.3" />
-    <text x="32" y="39" font-family="sans-serif" font-size="10" font-weight="bold" fill="#38bdf8">FEATURED</text>
+      <!-- Headline -->
+      <text x="0" y="75" font-family="'Times New Roman', Times, Georgia, serif" font-size="52" font-weight="500" fill="#111827" letter-spacing="-0.5">
+        A study in quiet luxury, honest
+      </text>
+      <text x="0" y="135" font-family="'Times New Roman', Times, Georgia, serif" font-size="52" font-weight="500" fill="#111827" letter-spacing="-0.5">
+        materiality &amp; sculpted drape.
+      </text>
 
-    <!-- Card Content -->
-    <text x="20" y="235" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="700" fill="#ffffff">Chronos Noir 40mm Watch</text>
-    <text x="20" y="255" font-family="sans-serif" font-size="12" fill="#94a3b8">Sapphire crystal glass · 5ATM water resistant</text>
-    <text x="20" y="295" font-family="'JetBrains Mono', monospace" font-size="18" font-weight="bold" fill="#38bdf8">$320.00</text>
+      <!-- Subtitle Description -->
+      <text x="0" y="200" font-size="16" fill="#6b7280" line-height="1.6">
+        Curated for discerning wardrobes without seasonal obsolescence.
+      </text>
+      <text x="0" y="228" font-size="16" fill="#6b7280" line-height="1.6">
+        Experience 520gsm Mongolian cashmere, sandwashed Como silks,
+      </text>
+      <text x="0" y="256" font-size="16" fill="#6b7280" line-height="1.6">
+        Okayama selvedge, and hand-carved Roman travertine.
+      </text>
 
-    <rect x="235" y="272" width="95" height="34" rx="6" fill="#0284c7" />
-    <text x="252" y="293" font-family="sans-serif" font-size="12" font-weight="bold" fill="#ffffff">Add to Bag</text>
-  </g>
+      <!-- CTA Buttons -->
+      <!-- Shop Women Button -->
+      <rect x="0" y="310" width="155" height="48" rx="8" fill="#18181b" />
+      <text x="24" y="340" font-size="13" font-weight="700" letter-spacing="1" fill="#ffffff">SHOP WOMEN  →</text>
 
-  <!-- Card 2: Cognac Leather Folio -->
-  <g transform="translate(425, 365)">
-    <rect x="0" y="0" width="345" height="340" rx="12" fill="url(#cardGrad)" stroke="#1e293b" stroke-width="1.5" />
-    
-    <!-- Image Box -->
-    <rect x="15" y="15" width="315" height="190" rx="8" fill="#070a10" stroke="#182234" stroke-width="1" />
-    
-    <!-- Leather Folio Illustration -->
-    <rect x="105" y="45" width="135" height="130" rx="10" fill="#78350f" stroke="#92400e" stroke-width="2" />
-    <path d="M 105 75 L 240 75" stroke="#451a03" stroke-width="2" stroke-dasharray="4,4" />
-    <rect x="160" y="65" width="25" height="20" rx="4" fill="#d97706" />
-    <circle cx="172" cy="75" r="4" fill="#fef3c7" />
+      <!-- Shop Men Button -->
+      <rect x="175" y="310" width="135" height="48" rx="8" fill="#ffffff" stroke="#d1d5db" stroke-width="1.5" />
+      <text x="202" y="340" font-size="13" font-weight="700" letter-spacing="1" fill="#18181b">SHOP MEN</text>
 
-    <!-- Badges -->
-    <rect x="25" y="25" width="65" height="20" rx="4" fill="#d97706" opacity="0.3" />
-    <text x="32" y="39" font-family="sans-serif" font-size="10" font-weight="bold" fill="#f59e0b">HANDCRAFTED</text>
+      <!-- Atelier Story Link -->
+      <circle cx="340" cy="334" r="7" stroke="#4b5563" stroke-width="1.5" fill="none" />
+      <line x1="337" y1="334" x2="343" y2="334" stroke="#4b5563" stroke-width="1.5" />
+      <line x1="340" y1="331" x2="340" y2="337" stroke="#4b5563" stroke-width="1.5" />
+      <text x="355" y="339" font-size="13" font-weight="600" letter-spacing="1" fill="#4b5563">ATELIER STORY</text>
+    </g>
 
-    <!-- Card Content -->
-    <text x="20" y="235" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="700" fill="#ffffff">Heritage Cognac Leather Folio</text>
-    <text x="20" y="255" font-family="sans-serif" font-size="12" fill="#94a3b8">Full-grain calfskin · 14" laptop compartment</text>
-    <text x="20" y="295" font-family="'JetBrains Mono', monospace" font-size="18" font-weight="bold" fill="#38bdf8">$180.00</text>
+    <!-- Right Column: Editorial Model Card Showcase -->
+    <g transform="translate(730, 95)">
+      <!-- Main Model Visual Container with rounded corners -->
+      <clipPath id="modelClip">
+        <rect x="0" y="0" width="440" height="555" rx="16" />
+      </clipPath>
 
-    <rect x="235" y="272" width="95" height="34" rx="6" fill="#0284c7" />
-    <text x="252" y="293" font-family="sans-serif" font-size="12" font-weight="bold" fill="#ffffff">Add to Bag</text>
-  </g>
+      <g clip-path="url(#modelClip)">
+        <!-- Image Backdrop Gradient simulating concrete architectural texture -->
+        <rect x="0" y="0" width="440" height="555" fill="#a8a29e" />
+        <linearGradient id="warmLight" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#d6d3d1" />
+          <stop offset="60%" stop-color="#a8a29e" />
+          <stop offset="100%" stop-color="#57534e" />
+        </linearGradient>
+        <rect x="0" y="0" width="440" height="555" fill="url(#warmLight)" />
 
-  <!-- Card 3: Obsidian Diver Limited -->
-  <g transform="translate(800, 365)">
-    <rect x="0" y="0" width="350" height="340" rx="12" fill="url(#cardGrad)" stroke="#1e293b" stroke-width="1.5" />
-    
-    <!-- Image Box -->
-    <rect x="15" y="15" width="320" height="190" rx="8" fill="#070a10" stroke="#182234" stroke-width="1" />
-    
-    <!-- Watch Illustration (Steel Mesh) -->
-    <rect x="160" y="30" width="30" height="160" rx="4" fill="#334155" stroke="#475569" stroke-width="1" />
-    <circle cx="175" cy="110" r="52" fill="#0f172a" stroke="#06b6d4" stroke-width="3" />
-    <circle cx="175" cy="110" r="44" fill="#020617" />
-    <circle cx="175" cy="110" r="3" fill="#38bdf8" />
-    <line x1="175" y1="110" x2="175" y2="84" stroke="#ffffff" stroke-width="3" stroke-linecap="round" />
-    <line x1="175" y1="110" x2="200" y2="110" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" />
+        <!-- Model Silhouette Elements: Jacket, Beanie, Hair -->
+        <!-- Model Torso (Green Cashmere Trench Jacket) -->
+        <path d="M80 555 L110 320 L150 260 L240 220 L300 240 L360 300 L410 555 Z" fill="#4a5340" />
+        
+        <!-- White Tee Collar -->
+        <path d="M190 320 C220 340 260 340 280 320 L270 420 L200 420 Z" fill="#f4f4f5" />
+        <text x="210" y="370" font-size="18" font-weight="900" fill="#27272a" letter-spacing="1">BLA...</text>
 
-    <!-- Badges -->
-    <rect x="25" y="25" width="75" height="20" rx="4" fill="#10b981" opacity="0.3" />
-    <text x="32" y="39" font-family="sans-serif" font-size="10" font-weight="bold" fill="#34d399">LIMITED (20)</text>
+        <!-- Trench Collar & Lapels -->
+        <path d="M150 260 L205 340 L170 470 L110 400 Z" fill="#3f4736" stroke="#2e3527" stroke-width="1.5" />
+        <path d="M300 240 L265 340 L310 470 L370 400 Z" fill="#3f4736" stroke="#2e3527" stroke-width="1.5" />
+        
+        <!-- Model Neck & Face Profile -->
+        <path d="M205 280 C210 240 215 200 225 180 C240 180 270 190 280 220 C280 250 265 290 260 310 Z" fill="#fecaca" />
+        <path d="M225 180 C235 170 255 165 265 175 C275 190 270 215 265 225 Z" fill="#fed7aa" />
 
-    <!-- Card Content -->
-    <text x="20" y="235" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="700" fill="#ffffff">Obsidian Automatic Diver</text>
-    <text x="20" y="255" font-family="sans-serif" font-size="12" fill="#94a3b8">Ceramic rotating bezel · 48-hr power reserve</text>
-    <text x="20" y="295" font-family="'JetBrains Mono', monospace" font-size="18" font-weight="bold" fill="#38bdf8">$450.00</text>
+        <!-- Short Blonde Hair -->
+        <path d="M195 190 C185 220 180 260 210 270 C225 270 225 240 215 220 Z" fill="#fef08a" />
+        <path d="M265 190 C285 220 290 260 270 270 C255 270 255 240 265 220 Z" fill="#fef08a" />
 
-    <rect x="240" y="272" width="95" height="34" rx="6" fill="#0284c7" />
-    <text x="257" y="293" font-family="sans-serif" font-size="12" font-weight="bold" fill="#ffffff">Add to Bag</text>
+        <!-- Black Beanie with red emblem -->
+        <path d="M210 185 C215 130 245 110 285 130 C300 150 305 180 300 200 C275 190 235 185 210 185 Z" fill="#1c1917" />
+        <rect x="250" y="145" width="12" height="6" rx="1" fill="#dc2626" />
+
+        <!-- Trench Details: Genuine Horn Buttons & Flap -->
+        <circle cx="195" cy="460" r="6" fill="#1c1917" stroke="#78716c" stroke-width="1" />
+        <circle cx="195" cy="520" r="6" fill="#1c1917" stroke="#78716c" stroke-width="1" />
+        
+        <!-- Dark Overlay Gradient at Bottom for text readability -->
+        <linearGradient id="overlayFade" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#000000" stop-opacity="0" />
+          <stop offset="40%" stop-color="#000000" stop-opacity="0.4" />
+          <stop offset="100%" stop-color="#000000" stop-opacity="0.92" />
+        </linearGradient>
+        <rect x="0" y="240" width="440" height="315" fill="url(#overlayFade)" />
+
+        <!-- Floating Product Info Card at Bottom of Image -->
+        <g transform="translate(25, 395)">
+          <text x="0" y="0" font-size="11" font-weight="700" letter-spacing="1.5" fill="#d1d5db">ATELIER SIGNATURE · 520GSM CASHMERE</text>
+          
+          <text x="0" y="32" font-family="'Times New Roman', Times, Georgia, serif" font-size="28" font-weight="600" fill="#ffffff">
+            The Double-Breasted Trench
+          </text>
+          
+          <text x="0" y="60" font-size="12" fill="#d1d5db">
+            Tailored with genuine horn button closures, storm flap detailing, and
+          </text>
+          <text x="0" y="78" font-size="12" fill="#d1d5db">
+            hand-finished pick-stitched lapels.
+          </text>
+
+          <text x="0" y="122" font-size="20" font-weight="700" fill="#ffffff">₹24,999</text>
+          
+          <text x="270" y="122" font-size="13" font-weight="600" fill="#ffffff">View Piece →</text>
+        </g>
+      </g>
+    </g>
+
   </g>
 </svg>
