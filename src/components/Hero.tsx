@@ -3,19 +3,24 @@ import { ArrowDown, Camera, Sparkles, Check } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
 export const Hero: React.FC = () => {
-  const [photoSrc, setPhotoSrc] = useState<string>('./assets/profile-photo.svg');
+  const [photoSrc, setPhotoSrc] = useState<string>('/assets/profile.jpg');
   const [imageLoaded, setImageLoaded] = useState<boolean>(true);
   const [imageError, setImageError] = useState<boolean>(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    // Check localStorage first if user uploaded a custom portrait, otherwise use relative local project asset
+    // If a custom portrait was saved in localStorage, sync it to permanent /assets/profile.jpg
     const savedPhoto = localStorage.getItem('tanuja_portrait');
-    if (savedPhoto) {
+    if (savedPhoto && savedPhoto.startsWith('data:image')) {
+      fetch('/api/sync-asset', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ filename: 'profile.jpg', data: savedPhoto })
+      }).catch(() => {});
       setPhotoSrc(savedPhoto);
       setImageLoaded(true);
     } else {
-      setPhotoSrc('./assets/profile-photo.svg');
+      setPhotoSrc('/assets/profile.jpg');
     }
   }, []);
 
@@ -31,6 +36,11 @@ export const Hero: React.FC = () => {
           setImageError(false);
           try {
             localStorage.setItem('tanuja_portrait', result);
+            fetch('/api/sync-asset', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ filename: 'profile.jpg', data: result })
+            }).catch(() => {});
           } catch (err) {
             console.warn('Storage limit reached, photo active in memory');
           }
@@ -41,8 +51,8 @@ export const Hero: React.FC = () => {
   };
 
   const handleImageError = () => {
-    if (photoSrc !== './assets/profile-photo.svg') {
-      setPhotoSrc('./assets/profile-photo.svg');
+    if (photoSrc !== '/assets/profile-photo.jpg' && photoSrc !== '/tanuja-portrait.jpg') {
+      setPhotoSrc('/assets/profile-photo.jpg');
       setImageError(false);
     } else {
       setImageError(true);

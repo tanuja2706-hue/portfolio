@@ -7,28 +7,49 @@ import { ProjectModal } from './ProjectModal';
 export const Projects: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [projectImages, setProjectImages] = useState<Record<string, string>>({
-    luxecart: './assets/luxecart-screenshot.svg',
-    shopsense: './assets/shopsense-screenshot.svg',
-    bistroorder: './assets/bistroorder-screenshot.svg'
+    luxecart: '/assets/luxecart.png',
+    shopsense: '/assets/shopsense.png',
+    bistroorder: '/assets/bistroorder.png'
   });
   const [imageErrors, setImageErrors] = useState<Record<string, boolean>>({});
 
   useEffect(() => {
-    // Load any saved screenshots from localStorage
-    const savedLuxeCart = localStorage.getItem('luxecart_screenshot');
-    const savedShopSense = localStorage.getItem('shopsense_screenshot');
-    const savedBistro = localStorage.getItem('bistroorder_screenshot');
+    // Sync any saved screenshots from localStorage to permanent /assets/ folder
+    const syncItem = (key: string, filename: string) => {
+      const data = localStorage.getItem(key);
+      if (data && data.startsWith('data:image')) {
+        fetch('/api/sync-asset', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ filename, data })
+        }).catch(() => {});
+        return data;
+      }
+      return null;
+    };
+
+    const savedLuxeCart = syncItem('luxecart_screenshot', 'luxecart.png');
+    const savedShopSense = syncItem('shopsense_screenshot', 'shopsense.png');
+    const savedBistro = syncItem('bistroorder_screenshot', 'bistroorder.png');
 
     setProjectImages(prev => ({
       ...prev,
-      ...(savedLuxeCart ? { luxecart: savedLuxeCart } : {}),
-      ...(savedShopSense ? { shopsense: savedShopSense } : {}),
-      ...(savedBistro ? { bistroorder: savedBistro } : {})
+      ...(savedLuxeCart ? { luxecart: savedLuxeCart } : { luxecart: '/assets/luxecart.png' }),
+      ...(savedShopSense ? { shopsense: savedShopSense } : { shopsense: '/assets/shopsense.png' }),
+      ...(savedBistro ? { bistroorder: savedBistro } : { bistroorder: '/assets/bistroorder.png' })
     }));
   }, []);
 
   const handleImageError = (projectId: string) => {
-    setImageErrors(prev => ({ ...prev, [projectId]: true }));
+    const current = projectImages[projectId];
+    if (current && !current.includes('screenshot')) {
+      setProjectImages(prev => ({
+        ...prev,
+        [projectId]: `/assets/${projectId}-screenshot.png`
+      }));
+    } else {
+      setImageErrors(prev => ({ ...prev, [projectId]: true }));
+    }
   };
 
   return (
