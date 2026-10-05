@@ -1,63 +1,18 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { ArrowDown, Camera, Sparkles, Check } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { ArrowDown } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
 export const Hero: React.FC = () => {
-  const [photoSrc, setPhotoSrc] = useState<string>('/assets/profile.jpg');
-  const [imageLoaded, setImageLoaded] = useState<boolean>(true);
-  const [imageError, setImageError] = useState<boolean>(false);
-  const fileInputRef = useRef<HTMLInputElement>(null);
+  const [photoSrc] = useState<string>('/assets/profile.jpg');
 
   useEffect(() => {
-    // If a custom portrait was saved in localStorage, sync it to permanent /assets/profile.jpg
-    const savedPhoto = localStorage.getItem('tanuja_portrait');
-    if (savedPhoto && savedPhoto.startsWith('data:image')) {
-      fetch('/api/sync-asset', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ filename: 'profile.jpg', data: savedPhoto })
-      }).catch(() => {});
-      setPhotoSrc(savedPhoto);
-      setImageLoaded(true);
-    } else {
-      setPhotoSrc('/assets/profile.jpg');
+    // Clean up any legacy localStorage key to prevent interference
+    try {
+      localStorage.removeItem('tanuja_portrait');
+    } catch (err) {
+      // Ignore
     }
   }, []);
-
-  const handlePhotoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        const result = event.target?.result as string;
-        if (result) {
-          setPhotoSrc(result);
-          setImageLoaded(true);
-          setImageError(false);
-          try {
-            localStorage.setItem('tanuja_portrait', result);
-            fetch('/api/sync-asset', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ filename: 'profile.jpg', data: result })
-            }).catch(() => {});
-          } catch (err) {
-            console.warn('Storage limit reached, photo active in memory');
-          }
-        }
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-
-  const handleImageError = () => {
-    if (photoSrc !== '/assets/profile-photo.jpg' && photoSrc !== '/tanuja-portrait.jpg') {
-      setPhotoSrc('/assets/profile-photo.jpg');
-      setImageError(false);
-    } else {
-      setImageError(true);
-    }
-  };
 
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
@@ -123,59 +78,11 @@ export const Hero: React.FC = () => {
                 <div className="w-full h-full rounded-full overflow-hidden bg-slate-900 border-2 border-slate-800 relative flex items-center justify-center">
                   
                   {/* The Actual Photo: object-fit: cover, no stretch, fully responsive */}
-                  {!imageError && photoSrc ? (
-                    <img
-                      src={photoSrc}
-                      alt="Tanuja Bag - Web Developer"
-                      referrerPolicy="no-referrer"
-                      onLoad={() => {
-                        setImageLoaded(true);
-                        setImageError(false);
-                      }}
-                      onError={handleImageError}
-                      className="w-full h-full object-cover object-center rounded-full transition-transform duration-500 group-hover:scale-105"
-                    />
-                  ) : null}
-
-                  {/* Fallback / Upload Prompt if image file not loaded */}
-                  {imageError && (
-                    <div className="text-center p-6 space-y-3">
-                      <div className="w-16 h-16 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mx-auto">
-                        <span className="text-xl font-bold font-mono">TB</span>
-                      </div>
-                      <div className="space-y-1">
-                        <div className="text-xs font-semibold text-white">Tanuja Bag</div>
-                        <div className="text-[11px] text-slate-400">Professional Portrait</div>
-                      </div>
-                      <button
-                        type="button"
-                        onClick={() => fileInputRef.current?.click()}
-                        className="px-3 py-1.5 rounded-lg bg-cyan-400/20 hover:bg-cyan-400/30 border border-cyan-500/40 text-cyan-300 text-xs font-medium transition-colors flex items-center gap-1.5 mx-auto"
-                      >
-                        <Camera className="w-3.5 h-3.5" />
-                        <span>Select Photo</span>
-                      </button>
-                    </div>
-                  )}
-
-                  {/* Subtle photo update button on hover */}
-                  <button
-                    type="button"
-                    onClick={() => fileInputRef.current?.click()}
-                    title="Update portrait photo"
-                    className="absolute bottom-4 right-4 p-2 rounded-full bg-slate-900/90 text-slate-300 hover:text-white border border-slate-700/80 shadow-lg hover:border-cyan-400 transition-all opacity-0 group-hover:opacity-100 hover:scale-110"
-                    aria-label="Upload photo"
-                  >
-                    <Camera className="w-4 h-4 text-cyan-400" />
-                  </button>
-
-                  <input
-                    ref={fileInputRef}
-                    type="file"
-                    accept="image/*"
-                    onChange={handlePhotoUpload}
-                    className="hidden"
-                    aria-hidden="true"
+                  <img
+                    src="/assets/profile.jpg"
+                    alt="Tanuja Bag - Web Developer"
+                    referrerPolicy="no-referrer"
+                    className="w-full h-full object-cover object-center rounded-full transition-transform duration-500 group-hover:scale-105"
                   />
 
                 </div>
