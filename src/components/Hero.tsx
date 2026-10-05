@@ -77,7 +77,7 @@ export const Hero: React.FC = () => {
                   
                   {/* The Actual Photo: object-fit: cover, no stretch, fully responsive */}
                   <img
-                    src="/assets/profile.jpg"
+                    src="/profile.jpg"
                     alt="Tanuja Bag - Web Developer"
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover object-center rounded-full transition-transform duration-500 group-hover:scale-105"
