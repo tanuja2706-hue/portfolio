@@ -1,22 +1,21 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ArrowDown, Mail, Camera, Sparkles, Check } from 'lucide-react';
+import { ArrowDown, Camera, Sparkles, Check } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
 export const Hero: React.FC = () => {
-  const [photoSrc, setPhotoSrc] = useState<string>('');
-  const [imageLoaded, setImageLoaded] = useState<boolean>(false);
+  const [photoSrc, setPhotoSrc] = useState<string>('./assets/profile-photo.svg');
+  const [imageLoaded, setImageLoaded] = useState<boolean>(true);
   const [imageError, setImageError] = useState<boolean>(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    // Check localStorage first, otherwise try standard image paths
+    // Check localStorage first if user uploaded a custom portrait, otherwise use relative local project asset
     const savedPhoto = localStorage.getItem('tanuja_portrait');
     if (savedPhoto) {
       setPhotoSrc(savedPhoto);
       setImageLoaded(true);
     } else {
-      // Default to the uploaded image name / public path
-      setPhotoSrc('/WhatsApp Image 2026-10-04 at 12.07.26 PM.jpeg');
+      setPhotoSrc('./assets/profile-photo.svg');
     }
   }, []);
 
@@ -42,9 +41,9 @@ export const Hero: React.FC = () => {
   };
 
   const handleImageError = () => {
-    // If the full whatsapp filename fails, try /tanuja-portrait.jpg fallback
-    if (photoSrc.includes('WhatsApp')) {
-      setPhotoSrc('/tanuja-portrait.jpg');
+    if (photoSrc !== './assets/profile-photo.svg') {
+      setPhotoSrc('./assets/profile-photo.svg');
+      setImageError(false);
     } else {
       setImageError(true);
     }
@@ -97,15 +96,6 @@ export const Hero: React.FC = () => {
               >
                 <span>View My Work</span>
                 <ArrowDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
-              </a>
-
-              <a
-                href="#contact"
-                onClick={(e) => scrollToSection(e, '#contact')}
-                className="px-6 py-3 rounded-lg border border-slate-700/80 hover:border-cyan-400/60 bg-slate-900/60 hover:bg-slate-850 text-slate-200 hover:text-white font-medium text-sm transition-all duration-200 active:scale-95 flex items-center gap-2"
-              >
-                <Mail className="w-4 h-4 text-cyan-400" />
-                <span>Contact Me</span>
               </a>
             </div>
           </div>

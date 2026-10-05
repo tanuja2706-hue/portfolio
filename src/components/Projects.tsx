@@ -7,9 +7,9 @@ import { ProjectModal } from './ProjectModal';
 export const Projects: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [projectImages, setProjectImages] = useState<Record<string, string>>({
-    luxecart: '/luxecart-screenshot.png',
-    shopsense: '/shopsense-screenshot.png',
-    bistroorder: '/bistroorder-screenshot.png'
+    luxecart: './assets/luxecart-screenshot.svg',
+    shopsense: './assets/shopsense-screenshot.svg',
+    bistroorder: './assets/bistroorder-screenshot.svg'
   });
   const [imageErrors, setImageErrors] = useState<Record<string, boolean>>({});
 

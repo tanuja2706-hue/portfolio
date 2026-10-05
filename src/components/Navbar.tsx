@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
 interface NavbarProps {
@@ -24,7 +24,6 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
     { label: 'Projects', href: '#projects' },
     { label: 'Services', href: '#services' },
     { label: 'Why Work With Me', href: '#why-me' },
-    { label: 'Contact', href: '#contact' },
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -45,10 +44,9 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
       }`}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Strict 3-zone Top Bar Contract */}
         <div className="flex items-center justify-between">
           
-          {/* Zone 1: Single text element wordmark */}
+          {/* Brand Wordmark */}
           <a
             href="#hero"
             onClick={(e) => handleNavClick(e, '#hero')}
@@ -58,7 +56,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
             <span className="font-semibold tracking-tight">{PERSONAL_INFO.name}</span>
           </a>
 
-          {/* Zone 2: Clean single-line text navigation links */}
+          {/* Clean single-line text navigation links */}
           <nav className="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300">
             {navLinks.map((link) => {
               const isActive = activeSection === link.href.substring(1);
@@ -81,18 +79,6 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
               );
             })}
           </nav>
-
-          {/* Zone 3: Primary action button */}
-          <div className="hidden md:flex items-center gap-3">
-            <a
-              href="#contact"
-              onClick={(e) => handleNavClick(e, '#contact')}
-              className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-slate-900 bg-cyan-400 hover:bg-cyan-300 active:scale-95 transition-all rounded-lg shadow-sm whitespace-nowrap"
-            >
-              <span>Get in Touch</span>
-              <ArrowUpRight className="w-3.5 h-3.5" />
-            </a>
-          </div>
 
           {/* Mobile Menu Button */}
           <button
@@ -120,16 +106,6 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
               {link.label}
             </a>
           ))}
-          <div className="pt-3 border-t border-slate-800">
-            <a
-              href="#contact"
-              onClick={(e) => handleNavClick(e, '#contact')}
-              className="flex items-center justify-center gap-2 w-full px-4 py-2.5 text-xs font-semibold text-slate-900 bg-cyan-400 hover:bg-cyan-300 rounded-lg transition-colors"
-            >
-              <span>Get in Touch</span>
-              <ArrowUpRight className="w-4 h-4" />
-            </a>
-          </div>
         </div>
       )}
     </header>

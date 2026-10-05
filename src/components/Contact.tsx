@@ -51,13 +51,16 @@ export const Contact: React.FC = () => {
             </div>
 
             <div className="flex items-center gap-2 pt-2 border-t border-slate-800/80">
-              <a
-                href={`mailto:${PERSONAL_INFO.email}`}
-                className="px-4 py-2 rounded-lg bg-cyan-400 hover:bg-cyan-300 text-slate-950 text-xs font-semibold transition-colors flex items-center gap-1.5 shadow-sm"
+              <button
+                type="button"
+                disabled
+                aria-disabled="true"
+                tabIndex={-1}
+                className="px-4 py-2 rounded-lg bg-cyan-400 text-slate-950 text-xs font-semibold flex items-center gap-1.5 shadow-sm cursor-default select-none pointer-events-none"
               >
                 <span>Send Email</span>
-                <ArrowUpRight className="w-3.5 h-3.5" />
-              </a>
+                <Mail className="w-3.5 h-3.5" />
+              </button>
 
               <button
                 type="button"

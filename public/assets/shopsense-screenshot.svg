@@ -1,0 +1,232 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="shopBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#090d16" />
+      <stop offset="100%" stop-color="#06090f" />
+    </linearGradient>
+
+    <!-- Card Background -->
+    <linearGradient id="cardGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#0b111e" />
+    </linearGradient>
+
+    <!-- Cyan Accent -->
+    <linearGradient id="cyanGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+  </defs>
+
+  <!-- Window Frame -->
+  <rect x="0" y="0" width="1200" height="750" rx="14" fill="url(#shopBg)" />
+  
+  <!-- Browser Chrome Top Bar -->
+  <rect x="0" y="0" width="1200" height="52" fill="#0b101c" />
+  <line x1="0" y1="52" x2="1200" y2="52" stroke="#1e293b" stroke-width="1.5" />
+
+  <!-- Window Controls -->
+  <circle cx="28" cy="26" r="6" fill="#ef4444" opacity="0.85" />
+  <circle cx="48" cy="26" r="6" fill="#f59e0b" opacity="0.85" />
+  <circle cx="68" cy="26" r="6" fill="#10b981" opacity="0.85" />
+
+  <!-- URL Address Bar -->
+  <rect x="220" y="12" width="760" height="28" rx="6" fill="#151d2e" stroke="#24324a" stroke-width="1" />
+  <circle cx="238" cy="26" r="4" fill="#06b6d4" />
+  <text x="252" y="30" font-family="'JetBrains Mono', monospace" font-size="12" fill="#94a3b8">https://shopsense.ai.studio</text>
+  <rect x="940" y="18" width="30" height="16" rx="4" fill="#06b6d4" opacity="0.2" />
+  <text x="944" y="30" font-family="sans-serif" font-size="10" fill="#38bdf8" font-weight="bold">SSL</text>
+
+  <!-- Website Top Navbar -->
+  <rect x="0" y="52" width="1200" height="75" fill="#090d17" opacity="0.95" />
+  <line x1="0" y1="127" x2="1200" y2="127" stroke="#1e293b" stroke-width="1" />
+
+  <!-- Brand Logo -->
+  <g transform="translate(50, 72)">
+    <rect x="0" y="0" width="36" height="36" rx="8" fill="url(#cyanGrad2)" />
+    <circle cx="18" cy="18" r="8" fill="#ffffff" opacity="0.9" />
+    <circle cx="18" cy="18" r="4" fill="#0891b2" />
+    <text x="46" y="26" font-family="'Plus Jakarta Sans', sans-serif" font-size="22" font-weight="800" fill="#ffffff">ShopSense</text>
+  </g>
+
+  <!-- Search Bar with Live Filter Input -->
+  <g transform="translate(320, 68)">
+    <rect x="0" y="0" width="520" height="42" rx="10" fill="#111827" stroke="#334155" stroke-width="1.5" />
+    <circle cx="24" cy="21" r="7" stroke="#06b6d4" stroke-width="2" fill="none" />
+    <line x1="29" y1="26" x2="36" y2="33" stroke="#06b6d4" stroke-width="2" stroke-linecap="round" />
+    <text x="48" y="26" font-family="sans-serif" font-size="13" fill="#cbd5e1">Search 250+ electronics, gadgets, audio gear...</text>
+    <rect x="420" y="7" width="90" height="28" rx="6" fill="#1e293b" />
+    <text x="432" y="25" font-family="sans-serif" font-size="11" font-weight="bold" fill="#38bdf8">In Stock (180)</text>
+  </g>
+
+  <!-- Right Actions: Wishlist & Cart -->
+  <g transform="translate(980, 72)">
+    <rect x="0" y="0" width="80" height="36" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1" />
+    <text x="14" y="23" font-family="sans-serif" font-size="12" fill="#cbd5e1">Wishlist (4)</text>
+
+    <rect x="90" y="0" width="80" height="36" rx="8" fill="#0284c7" />
+    <text x="105" y="23" font-family="sans-serif" font-size="12" font-weight="bold" fill="#ffffff">Cart (1)</text>
+  </g>
+
+  <!-- Main Body: Left Sidebar (Filters) + Right Product Grid -->
+
+  <!-- Left Sidebar (Multi-Criteria Filter Panel) -->
+  <g transform="translate(50, 150)">
+    <rect x="0" y="0" width="240" height="565" rx="12" fill="#0c121e" stroke="#1e293b" stroke-width="1" />
+    
+    <text x="20" y="32" font-family="sans-serif" font-size="13" font-weight="bold" fill="#ffffff" letter-spacing="1">FILTERS</text>
+    <text x="175" y="32" font-family="sans-serif" font-size="11" font-weight="600" fill="#06b6d4">Reset All</text>
+    <line x1="20" y1="46" x2="220" y2="46" stroke="#1e293b" stroke-width="1" />
+
+    <!-- Categories Accordion -->
+    <text x="20" y="75" font-family="sans-serif" font-size="11" font-weight="bold" fill="#94a3b8" letter-spacing="1">CATEGORY</text>
+    
+    <rect x="20" y="90" width="200" height="28" rx="6" fill="#06b6d4" opacity="0.15" />
+    <text x="32" y="108" font-family="sans-serif" font-size="12" font-weight="bold" fill="#38bdf8">All Electronics (254)</text>
+
+    <text x="32" y="142" font-family="sans-serif" font-size="12" fill="#94a3b8">Audio &amp; Headphones (64)</text>
+    <text x="32" y="174" font-family="sans-serif" font-size="12" fill="#94a3b8">Smart Wearables (42)</text>
+    <text x="32" y="206" font-family="sans-serif" font-size="12" fill="#94a3b8">Power &amp; Charging (38)</text>
+    <text x="32" y="238" font-family="sans-serif" font-size="12" fill="#94a3b8">Smart Home Tech (55)</text>
+
+    <line x1="20" y1="260" x2="220" y2="260" stroke="#1e293b" stroke-width="1" />
+
+    <!-- Price Range Filter -->
+    <text x="20" y="290" font-family="sans-serif" font-size="11" font-weight="bold" fill="#94a3b8" letter-spacing="1">PRICE RANGE</text>
+    <rect x="20" y="310" width="200" height="6" rx="3" fill="#1e293b" />
+    <rect x="20" y="310" width="130" height="6" rx="3" fill="#06b6d4" />
+    <circle cx="150" cy="313" r="7" fill="#ffffff" stroke="#06b6d4" stroke-width="2" />
+    <text x="20" y="340" font-family="'JetBrains Mono', monospace" font-size="11" fill="#cbd5e1">$0 - $200</text>
+
+    <line x1="20" y1="365" x2="220" y2="365" stroke="#1e293b" stroke-width="1" />
+
+    <!-- Rating Filter -->
+    <text x="20" y="395" font-family="sans-serif" font-size="11" font-weight="bold" fill="#94a3b8" letter-spacing="1">CUSTOMER RATING</text>
+    <g transform="translate(20, 410)">
+      <circle cx="6" cy="6" r="5" fill="#06b6d4" />
+      <text x="20" y="10" font-family="sans-serif" font-size="11" fill="#f59e0b">★ ★ ★ ★ ★ (4.5 &amp; up)</text>
+    </g>
+    <g transform="translate(20, 435)">
+      <circle cx="6" cy="6" r="5" stroke="#475569" fill="none" />
+      <text x="20" y="10" font-family="sans-serif" font-size="11" fill="#94a3b8">★ ★ ★ ★ ☆ (4.0 &amp; up)</text>
+    </g>
+
+    <!-- Availability Tag -->
+    <g transform="translate(20, 480)">
+      <rect x="0" y="0" width="200" height="40" rx="8" fill="#111827" stroke="#1e293b" stroke-width="1" />
+      <circle cx="20" cy="20" r="5" fill="#10b981" />
+      <text x="35" y="24" font-family="sans-serif" font-size="11" font-weight="600" fill="#f1f5f9">Instant Delivery Only</text>
+    </g>
+  </g>
+
+  <!-- Right Product Grid Section -->
+
+  <!-- Grid Header / Stats -->
+  <g transform="translate(315, 150)">
+    <text x="0" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="18" font-weight="bold" fill="#ffffff">Trending Gadgets &amp; Hardware</text>
+    <text x="0" y="44" font-family="sans-serif" font-size="12" fill="#94a3b8">Showing 24 products with instant zero-lag reactive filtering</text>
+
+    <!-- Sort Dropdown -->
+    <rect x="715" y="10" width="120" height="34" rx="8" fill="#111827" stroke="#1e293b" stroke-width="1" />
+    <text x="728" y="32" font-family="sans-serif" font-size="11" fill="#cbd5e1">Sort: Highest Rated ▾</text>
+  </g>
+
+  <!-- Product 1: Pro ANC Wireless Headphones -->
+  <g transform="translate(315, 215)">
+    <rect x="0" y="0" width="265" height="400" rx="12" fill="url(#cardGrad2)" stroke="#1e293b" stroke-width="1.5" />
+    
+    <!-- Image Area -->
+    <rect x="12" y="12" width="241" height="210" rx="8" fill="#080c14" stroke="#161f30" stroke-width="1" />
+    
+    <!-- Headphones Vector Art -->
+    <path d="M 85 110 C 85 65 180 65 180 110" fill="none" stroke="#334155" stroke-width="8" stroke-linecap="round" />
+    <path d="M 95 110 C 95 75 170 75 170 110" fill="none" stroke="#06b6d4" stroke-width="3" stroke-linecap="round" />
+    <!-- Earcups -->
+    <ellipse cx="85" cy="125" rx="18" ry="32" fill="#1e293b" stroke="#06b6d4" stroke-width="2" />
+    <ellipse cx="85" cy="125" rx="10" ry="22" fill="#0f172a" />
+    <ellipse cx="180" cy="125" rx="18" ry="32" fill="#1e293b" stroke="#06b6d4" stroke-width="2" />
+    <ellipse cx="180" cy="125" rx="10" ry="22" fill="#0f172a" />
+
+    <!-- Badges -->
+    <rect x="22" y="22" width="60" height="20" rx="4" fill="#0284c7" opacity="0.3" />
+    <text x="28" y="36" font-family="sans-serif" font-size="10" font-weight="bold" fill="#38bdf8">TOP RATED</text>
+
+    <!-- Content -->
+    <text x="16" y="246" font-family="sans-serif" font-size="10" font-weight="bold" fill="#06b6d4">AUDIO &amp; WEARABLES</text>
+    <text x="16" y="268" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="700" fill="#ffffff">Pro ANC Wireless Headphones</text>
+    <text x="16" y="288" font-family="sans-serif" font-size="11" fill="#f59e0b">★ 4.9 <tspan fill="#64748b">(128 verified reviews)</tspan></text>
+
+    <line x1="16" y1="305" x2="249" y2="305" stroke="#1e293b" stroke-width="1" />
+
+    <text x="16" y="335" font-family="'JetBrains Mono', monospace" font-size="18" font-weight="bold" fill="#38bdf8">$189.00</text>
+    <text x="95" y="334" font-family="sans-serif" font-size="10" fill="#10b981">✓ In Stock</text>
+
+    <rect x="16" y="350" width="233" height="36" rx="6" fill="#0284c7" />
+    <text x="88" y="373" font-family="sans-serif" font-size="12" font-weight="bold" fill="#ffffff">Add to Cart</text>
+  </g>
+
+  <!-- Product 2: PulseFit Smart Fitness Band -->
+  <g transform="translate(600, 215)">
+    <rect x="0" y="0" width="265" height="400" rx="12" fill="url(#cardGrad2)" stroke="#1e293b" stroke-width="1.5" />
+    
+    <!-- Image Area -->
+    <rect x="12" y="12" width="241" height="210" rx="8" fill="#080c14" stroke="#161f30" stroke-width="1" />
+    
+    <!-- Smart Band Vector -->
+    <rect x="110" y="40" width="45" height="150" rx="22" fill="#1e293b" stroke="#334155" stroke-width="2" />
+    <rect x="117" y="80" width="31" height="65" rx="10" fill="#020617" stroke="#06b6d4" stroke-width="2" />
+    <text x="124" y="105" font-family="'JetBrains Mono', monospace" font-size="9" fill="#38bdf8">10:42</text>
+    <text x="124" y="120" font-family="sans-serif" font-size="8" fill="#10b981">♥ 74 bpm</text>
+    <circle cx="132" cy="133" r="3" fill="#f59e0b" />
+
+    <!-- Badges -->
+    <rect x="22" y="22" width="55" height="20" rx="4" fill="#10b981" opacity="0.3" />
+    <text x="28" y="36" font-family="sans-serif" font-size="10" font-weight="bold" fill="#34d399">NEW GEN</text>
+
+    <!-- Content -->
+    <text x="16" y="246" font-family="sans-serif" font-size="10" font-weight="bold" fill="#06b6d4">SMART WEARABLES</text>
+    <text x="16" y="268" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="700" fill="#ffffff">PulseFit Smart Band v5</text>
+    <text x="16" y="288" font-family="sans-serif" font-size="11" fill="#f59e0b">★ 4.8 <tspan fill="#64748b">(84 verified reviews)</tspan></text>
+
+    <line x1="16" y1="305" x2="249" y2="305" stroke="#1e293b" stroke-width="1" />
+
+    <text x="16" y="335" font-family="'JetBrains Mono', monospace" font-size="18" font-weight="bold" fill="#38bdf8">$89.00</text>
+    <text x="85" y="334" font-family="sans-serif" font-size="10" fill="#10b981">✓ In Stock</text>
+
+    <rect x="16" y="350" width="233" height="36" rx="6" fill="#0284c7" />
+    <text x="88" y="373" font-family="sans-serif" font-size="12" font-weight="bold" fill="#ffffff">Add to Cart</text>
+  </g>
+
+  <!-- Product 3: MagSafe 3-in-1 Charging Stand -->
+  <g transform="translate(885, 215)">
+    <rect x="0" y="0" width="265" height="400" rx="12" fill="url(#cardGrad2)" stroke="#1e293b" stroke-width="1.5" />
+    
+    <!-- Image Area -->
+    <rect x="12" y="12" width="241" height="210" rx="8" fill="#080c14" stroke="#161f30" stroke-width="1" />
+    
+    <!-- MagSafe Stand Vector -->
+    <rect x="75" y="160" width="115" height="18" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1.5" />
+    <rect x="125" y="80" width="14" height="85" rx="3" fill="#334155" />
+    <circle cx="132" cy="75" r="34" fill="#0f172a" stroke="#06b6d4" stroke-width="3" />
+    <circle cx="132" cy="75" r="22" stroke="#38bdf8" stroke-dasharray="4,4" fill="none" />
+    <circle cx="132" cy="75" r="4" fill="#38bdf8" />
+
+    <!-- Badges -->
+    <rect x="22" y="22" width="55" height="20" rx="4" fill="#f59e0b" opacity="0.3" />
+    <text x="28" y="36" font-family="sans-serif" font-size="10" font-weight="bold" fill="#fbbf24">POPULAR</text>
+
+    <!-- Content -->
+    <text x="16" y="246" font-family="sans-serif" font-size="10" font-weight="bold" fill="#06b6d4">POWER &amp; CHARGING</text>
+    <text x="16" y="268" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="700" fill="#ffffff">MagSafe 3-in-1 Fast Stand</text>
+    <text x="16" y="288" font-family="sans-serif" font-size="11" fill="#f59e0b">★ 4.7 <tspan fill="#64748b">(42 verified reviews)</tspan></text>
+
+    <line x1="16" y1="305" x2="249" y2="305" stroke="#1e293b" stroke-width="1" />
+
+    <text x="16" y="335" font-family="'JetBrains Mono', monospace" font-size="18" font-weight="bold" fill="#38bdf8">$59.00</text>
+    <text x="85" y="334" font-family="sans-serif" font-size="10" fill="#10b981">✓ In Stock</text>
+
+    <rect x="16" y="350" width="233" height="36" rx="6" fill="#0284c7" />
+    <text x="88" y="373" font-family="sans-serif" font-size="12" font-weight="bold" fill="#ffffff">Add to Cart</text>
+  </g>
+</svg>
